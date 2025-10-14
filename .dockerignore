@@ -1,0 +1,67 @@
+# Git
+.git
+.gitignore
+
+# Python
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+env
+pip-log.txt
+pip-delete-this-directory.txt
+.tox
+.coverage
+.coverage.*
+.pytest_cache
+nosetests.xml
+.cache
+coverage.xml
+*,cover
+*.cover
+.hypothesis
+.pytest_cache
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Project specific
+*.log
+*.tmp
+data/
+# Note: We include .env.example and credentials/ for the embedded build
+
+# Documentation
+CAPTURAS_EJECUCION.md
+RESUMEN_EJECUTIVO.md
+
+# Docker files (exclude others but not the embedded ones)
+Dockerfile
+Dockerfile.production
+docker-compose.yml
+.dockerignore
+
+# Scripts
+*.bat
+*.sh
+install.*
+run.*

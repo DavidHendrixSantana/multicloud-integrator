@@ -1,0 +1,29 @@
+services:
+  multicloud-integrator:
+    build:
+      context: .
+      dockerfile: Dockerfile.embedded
+    container_name: multicloud-integrator-embedded
+    environment:
+      # Override paths for container environment
+      - GOOGLE_APPLICATION_CREDENTIALS=/app/credentials/data_google_cloud.json
+    
+    volumes:
+      # Mount data directory for file transfers
+      - ./data:/app/data
+      # Mount files directory if you need to access local files
+      - ./files:/app/files:ro
+      # Optional: mount additional credentials if needed at runtime
+      - ./credentials:/app/credentials-external:ro
+    
+    # Interactive mode for CLI usage
+    stdin_open: true
+    tty: true
+    
+    # Health check
+    healthcheck:
+      test: ["CMD", "python", "-c", "import sys; sys.exit(0)"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s

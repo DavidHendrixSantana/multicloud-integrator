@@ -13,7 +13,7 @@ rich==13.7.0
 structlog==23.2.0
 
 # Security and validation
-cryptography==41.0.8
+cryptography==38.0.4
 pydantic==2.5.0
 
 # Retry and resilience
